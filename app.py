@@ -3,7 +3,8 @@ import json
 from flask import Flask
 from flask import request
 from flask import render_template
-from gurobi import *
+from gurobi_model import *
+from prepare import *
 import pandas as pd
 
 
@@ -12,7 +13,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def main():  # put application's code here
+def main():  
     favourite_name = pd.read_csv('data/attractions_cheap.csv', usecols=[1])
     favourite_name = list(favourite_name['attraction'].iloc[0:30])
     return render_template("index.html",favourite_name=favourite_name)
