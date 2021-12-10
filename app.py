@@ -64,7 +64,7 @@ def strategy():
     print('standard',standard)
     if standard <= 100:
         Time_Drive,Time_Walk,Time_Transit,Time_Attraction,Fare_Attraction,Fare_Drive,Name,Category_Attraction,Fare_Attraction_c,Fare_Drive_l = prepare_data(doc_time_cheap, doc_attractions_cheap, doc_price_cheap, doc_price_cheap_l)
-        if category == 'None' and favourite == 'None':  # obj = num of attractions
+        if category == ['None'] and favourite == ['None']:  # obj = num of attractions
             if (days == 1):
                 cycle, method, total_time, total_fare, hotel_fare, attraction_fare, trans_fare, obj, cat, trans_oneday, trans_onetrip, ind = one_day(adult,children,rooms,Time_Drive, Time_Walk, Time_Transit, Time_Attraction, Fare_Attraction, Fare_Attraction_c,Fare_Drive, Fare_Drive_l,Name, int(time_limit), fare_limit, Category_Attraction)
                 #print(cycle, method, total_time, total_fare, hotel_fare, attraction_fare, obj)
@@ -91,7 +91,7 @@ def strategy():
 
     elif standard > 100 and standard <= 400:
         Time_Drive,Time_Walk,Time_Transit,Time_Attraction,Fare_Attraction,Fare_Drive,Name,Category_Attraction,Fare_Attraction_c,Fare_Drive_l = prepare_data(doc_time_medium, doc_attractions_medium, doc_price_medium,doc_price_medium_l)
-        if category == 'None' and favourite == 'None':  # obj = num of attractions
+        if category == ['None'] and favourite == ['None']:  # obj = num of attractions
             if (days == 1):
                 print('test')
                 cycle, method, total_time, total_fare, hotel_fare, attraction_fare, trans_fare, obj, cat, trans_oneday, trans_onetrip,ind = one_day(adult,children,rooms,Time_Drive, Time_Walk, Time_Transit, Time_Attraction, Fare_Attraction,Fare_Attraction_c, Fare_Drive, Fare_Drive_l,Name, int(time_limit), fare_limit, Category_Attraction)
@@ -120,7 +120,7 @@ def strategy():
 
     else:
         Time_Drive,Time_Walk,Time_Transit,Time_Attraction,Fare_Attraction,Fare_Drive,Name,Category_Attraction,Fare_Attraction_c,Fare_Drive_l = prepare_data(doc_time_ex, doc_attractions_ex, doc_price_ex, doc_price_ex_l)
-        if category == 'None' and favourite == 'None':  # obj = num of attractions
+        if category == ['None'] and favourite == ['None']:  # obj = num of attractions
             if (days == 1):
                 cycle, method, total_time, total_fare, hotel_fare, attraction_fare, trans_fare, obj, cat, trans_oneday, trans_onetrip,ind = one_day(adult,children,rooms,Time_Drive, Time_Walk, Time_Transit, Time_Attraction, Fare_Attraction,Fare_Attraction_c, Fare_Drive,Fare_Drive_l, Name, int(time_limit), fare_limit, Category_Attraction)
                 #print(cycle, method, total_time, total_fare, hotel_fare, attraction_fare, obj)
