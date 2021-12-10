@@ -15,7 +15,7 @@ import re
 import pandas as pd
 import numpy
 
-attractions = pd.read_csv("/Users/syrenia/Downloads/attractions.csv")
+attractions = pd.read_csv("data/attractions_cheap.csv")
 price_maxtrix_uberx = []
 price_maxtrix_uberxl = []
 
@@ -45,7 +45,7 @@ vehicle_price = re.compile(r'<p class="fd cm cn j9 ja">CA(.*)</p>')
 def login():
     time.sleep(2)
     mobile = chrome.find_element_by_css_selector("input#mobile")
-    mobile.send_keys("5143773688")
+    mobile.send_keys("XX")
     mobile.send_keys(Keys.RETURN)
     time.sleep(2)
     
@@ -55,14 +55,14 @@ def sms(n):
     time.sleep(2)
     sms.send_keys(Keys.RETURN)
     password = chrome.find_element_by_css_selector("input#password")
-    password.send_keys("19971114wthxxd")
+    password.send_keys("XX")
     time.sleep(2)
     password.send_keys(Keys.RETURN)
 
 chrome= webdriver.Chrome("/Users/syrenia/Downloads/chromedriver")
 chrome.get("https://m.uber.com/looking?uclick_id=669e7b22-a3fe-44cc-a6fd-3ad1b406843a")
 login()
-sms("2520")
+sms("XX")
 
 def clickdetail():
     detail = chrome.find_element_by_xpath("/html/body/div/div[2]/div[2]/div[1]/div[3]/div[4]/div[1]")
@@ -71,11 +71,11 @@ def clickdetail():
 def prepare():
     location = chrome.find_element_by_css_selector("input")
     Action = ActionChains(chrome)
-    Action.send_keys_to_element(location, "3575 University Street, Montreal, QC").perform()
+    Action.send_keys_to_element(location, "XX").perform()
     time.sleep(2)
     clickdetail()
     time.sleep(2)
-    Action.send_keys_to_element(location, "McGill University").perform()
+    Action.send_keys_to_element(location, "XX").perform()
     time.sleep(2)
     clickdetail()
 
@@ -89,7 +89,6 @@ def get_info():
         #pickup = chrome.find_element_by_xpath("//*[@id='booking-experience-container']/div/div[2]/div/div[2]/div[1]/div[2]")
         pickup = chrome.find_element_by_xpath('//*[@id="booking-experience-container"]/div/div[2]/div/div/div[1]/div[2]')
         pickup.click()
-        #Action.send_keys_to_element(pickup, read_attractions(i)).perform()
         location = chrome.find_element_by_css_selector("input")
         location.send_keys(read_attractions(i))
         time.sleep(5)
@@ -138,8 +137,8 @@ def save():
     matrix2 = numpy.array(price_maxtrix_uberxl)
     df1 = pd.DataFrame(matrix1, columns=list(range(30)))
     df2 = pd.DataFrame(matrix2, columns=list(range(30)))
-    df1.to_csv("/Users/syrenia/Downloads/price_matrix_uberx12+.csv")
-    df2.to_csv("/Users/syrenia/Downloads/price_matrix_uberxl12+.csv")
+    df1.to_csv("XX")
+    df2.to_csv("XX")
 
 def scrap(n):
     html = chrome.page_source
@@ -155,42 +154,6 @@ def scrap(n):
         if type_== 'UberXL':
             data_uberxl[n] = price
 
-
-def complement():
-    for i in range(14,30):
-        #pickup = chrome.find_element_by_xpath("//*[@id='booking-experience-container']/div/div[2]/div/div[2]/div[1]/div[2]")
-        pickup = chrome.find_element_by_xpath('//*[@id="booking-experience-container"]/div/div[2]/div/div/div[1]/div[2]')
-        pickup.click()
-        #Action.send_keys_to_element(pickup, read_attractions(i)).perform()
-        location = chrome.find_element_by_css_selector("input")
-        location.send_keys(read_attractions(i))
-        time.sleep(5)
-        clickdetail()
-        time.sleep(2)
-        for j in range(i):
-            #drop = chrome.find_element_by_xpath("//*[@id='booking-experience-container']/div/div[2]/div/div[2]/div[2]/div[2]")
-            drop = chrome.find_element_by_xpath('//*[@id="booking-experience-container"]/div/div[2]/div/div/div[2]/div[2]')
-            drop.click()
-            location = chrome.find_element_by_css_selector("input")
-            location.send_keys(read_attractions(j))
-            #Action.send_keys_to_element(drop, read_attractions(j)).perform()
-            time.sleep(4)
-            clickdetail()
-            time.sleep(7)
-            html = chrome.page_source
-            soup = BeautifulSoup(html,"html.parser")
-            vehicle = soup.select('div[data-test="vehicle-view-container"]')
-            for item in vehicle:
-                item = str(item)
-                type_ = re.findall(vehicle_type, item)[0]
-                #space = re.findall(vehicle_space, item)[0]
-                price = re.findall(vehicle_price, item)[0]
-                if type_== 'UberX':
-                    price_maxtrix_uberx[i-12][j] = price
-                if type_== 'UberXL':
-                    price_maxtrix_uberxl[i-12][j] = price
-            time.sleep(2)
-        time.sleep(5)
 
 
 
