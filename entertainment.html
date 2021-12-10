@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by " />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="../static/css/superfish.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../static/css/magnific-popup.css">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="../static/css/bootstrap-datepicker.min.css">
+	<!-- CS Select -->
+	<link rel="stylesheet" href="../static/css/cs-select.css">
+	<link rel="stylesheet" href="../static/css/cs-skin-border.css">
+	
+	<link rel="stylesheet" href="../static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="../static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="../static/js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="/index"><i class="icon-airplane"></i>Itinerary Strategy</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active"><a href="/index">Home</a></li>
+							<li>
+								<a href='/attractions' class="fh5co-sub-ddown">Attractions</a>
+								<ul class="fh5co-sub-menu">
+									<li><a href="/Entertainment">Entertainment</a></li>
+									<li><a href="/Food">Food</a></li>
+									<li><a href="/Heritage">Heritage</a></li>
+									<li><a href="/Museum">Museum</a></li>
+									<li><a href="/Nature">Nature</a></li>
+								</ul>
+							</li>
+							<li><a href="/hotel">Hotel</a></li>
+							<li><a href="/transit">Transportation</a></li>
+							<li><a href="/contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+
+		<!-- end:header-top -->
+
+		<div id="fh5co-tours" class="fh5co-section-gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+						<h3>Tourist Spots</h3>
+						<p>Entertainment</p>
+					</div>
+				</div>
+				<div class="row">
+                    <!-- partial attractions -->
+					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="../static/images/attractions_{{ i[0] }}.jpeg" alt="Free HTML5 Website Template by " class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>{{ name[0] }}</h3>
+								<span>{{ ca[0] }}|{{ r[0] }}|{{ ta[0] }} hours</span>
+								<span class="price">Adult: ${{ fa[0] }}</span>
+                                <span class="price">Child: ${{ fac[0] }}</span>
+								<a class="btn btn-primary btn-outline" href="#">Go Now <i class="icon-arrow-right22"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="../static/images/attractions_{{ i[1] }}.jpeg" alt="Free HTML5 Website Template by " class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>{{ name[1] }}</h3>
+								<span>{{ ca[1] }}|{{ r[1] }}|{{ ta[1] }} hours</span>
+								<span class="price">Adult: ${{ fa[1] }}</span>
+                                <span class="price">Child: ${{ fac[1] }}</span>
+								<a class="btn btn-primary btn-outline" href="#">Go Now <i class="icon-arrow-right22"></i></a>
+							</div>
+						</div>
+					</div>
+                    <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="../static/images/attractions_{{ i[2] }}.jpeg" alt="Free HTML5 Website Template by " class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>{{ name[2] }}</h3>
+								<span>{{ ca[2] }}|{{ r[2] }}|{{ ta[2] }} hours</span>
+								<span class="price">Adult: ${{ fa[2] }}</span>
+                                <span class="price">Child: ${{ fac[2] }}</span>
+								<a class="btn btn-primary btn-outline" href="#">Go Now <i class="icon-arrow-right22"></i></a>
+							</div>
+						</div>
+					</div>
+                    <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="../static/images/attractions_{{ i[3] }}.jpeg" alt="Free HTML5 Website Template by " class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>{{ name[3] }}</h3>
+								<span>{{ ca[3] }}|{{ r[3] }}|{{ ta[3] }} hours</span>
+								<span class="price">Adult: ${{ fa[3] }}</span>
+                                <span class="price">Child: ${{ fac[3] }}</span>
+								<a class="btn btn-primary btn-outline" href="#">Go Now <i class="icon-arrow-right22"></i></a>
+							</div>
+						</div>
+					</div>
+                    <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="../static/images/attractions_{{ i[4] }}.jpeg" alt="Free HTML5 Website Template by " class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>{{ name[4] }}</h3>
+								<span>{{ ca[4] }}|{{ r[4] }}|{{ ta[4] }} hours</span>
+								<span class="price">Adult: ${{ fa[4] }}</span>
+                                <span class="price">Child: ${{ fac[4] }}</span>
+								<a class="btn btn-primary btn-outline" href="#">Go Now <i class="icon-arrow-right22"></i></a>
+							</div>
+						</div>
+					</div>
+                    <div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
+						<div href="#"><img src="../static/images/attractions_{{ i[5] }}.jpeg" alt="Free HTML5 Website Template by " class="img-responsive">
+							<div class="desc">
+								<span></span>
+								<h3>{{ name[5] }}</h3>
+								<span>{{ ca[5] }}|{{ r[5] }}|{{ ta[5] }} hours</span>
+								<span class="price">Adult: ${{ fa[5] }}</span>
+                                <span class="price">Child: ${{ fac[5] }}</span>
+								<a class="btn btn-primary btn-outline" href="#">Go Now <i class="icon-arrow-right22"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p>Copyright &copy; 2021.MGSC662 Group11 All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="../static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../static/js/jquery.waypoints.min.js"></script>
+	<script src="../static/js/sticky.js"></script>
+
+	<!-- Stellar -->
+	<script src="../static/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="../static/js/hoverIntent.js"></script>
+	<script src="../static/js/superfish.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/magnific-popup-options.js"></script>
+	<!-- Date Picker -->
+	<script src="../static/js/bootstrap-datepicker.min.js"></script>
+	<!-- CS Select -->
+	<script src="../static/js/classie.js"></script>
+	<script src="../static/js/selectFx.js"></script>
+	
+	<!-- Main JS -->
+	<script src="../static/js/main.js"></script>
+
+	</body>
+</html>
+

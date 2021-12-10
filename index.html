@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by " />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="../static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="../static/css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="../static/css/superfish.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="../static/css/magnific-popup.css">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="../static/css/bootstrap-datepicker.min.css">
+	<!-- CS Select -->
+	<link rel="stylesheet" href="../static/css/cs-select.css">
+	<link rel="stylesheet" href="../static/css/cs-skin-border.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/multiple-select@1.5.2/dist/multiple-select.min.js"></script>
+    <style>
+    select {
+      width: 100%;
+    }
+    </style>
+
+	<!-- Modernizr JS -->
+	<script src="../static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="../static/js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="/index"><i class="icon-airplane"></i>Itinerary Strategy</a></h1>
+					<!-- START #fh5co-menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active"><a href="/index">Home</a></li>
+							<li>
+								<a href='/attractions' class="fh5co-sub-ddown">Attractions</a>
+								<ul class="fh5co-sub-menu">
+									<li><a href="/Entertainment">Entertainment</a></li>
+									<li><a href="/Food">Food</a></li>
+									<li><a href="/Heritage">Heritage</a></li>
+									<li><a href="/Museum">Museum</a></li>
+									<li><a href="/Nature">Nature</a></li>
+								</ul>
+							</li>
+							<li><a href="/hotel">Hotel</a></li>
+							<li><a href="/transit">Transportation</a></li>
+							<li><a href="/contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- end:header-top -->
+	
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(../static/images/montreal_bg2.jpg);">
+				<div class="desc">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-5 col-md-5">
+								<div class="tabulation animate-box">
+
+								  <!-- Nav tabs -->
+								   <ul class="nav nav-tabs" role="tablist">
+								      <li role="presentation">
+								    	   <a href="#packages" aria-controls="packages" role="tab" data-toggle="tab">Provide Your Demand</a>
+								      </li>
+								   </ul>
+
+								   <!-- Tab panes -->
+                                    <form action="{{ url_for('strategy')}}" class="form-text" method="POST" onSubmit="return b1()">
+									<div class="tab-content">
+									 <div role="tabpanel" class="tab-pane" id="packages">
+									 	<div class="row">
+											<div class="col-sm-12 mt">
+												<div class="input-field">
+													<label for="from">Destination:</label>
+													<input type="text" class="form-control" id="from-place" placeholder="Montreal,Canada"/>
+												</div>
+											</div>
+                                            <div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Time Limit(hours/day):</label>
+													<select name="time_limit" class="cs-select cs-skin-border">
+														<option value="" disabled selected>Please Choose</option>
+                                                        <option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+													</select>
+												</section>
+											</div>
+                                            <div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Budget Limit(total):</label>
+													<select id='budget' name="budget_limit" class="cs-select cs-skin-border">
+														<option value="" disabled selected>Please Choose</option>
+														<option value="100">no more than $100</option>
+                                                        <option value="300">no more than $300</option>
+                                                        <option value="600">no more than $600</option>
+														<option value="1000">no more than $1000</option>
+                                                        <option value="1500">no more than $1500</option>
+														<option value="no limit">no limit</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Days:</label>
+													<select id="days" name="days" class="cs-select cs-skin-border">
+														<option value="" disabled selected>Please Choose</option>
+														<option value="1">1</option>
+														<option value="3">3</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Rooms:</label>
+													<select id="rooms" name="rooms" class="cs-select cs-skin-border">
+														<option value="" disabled selected>Please Choose</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Adult:</label>
+													<select id="adult" name="adult" class="cs-select cs-skin-border">
+														<option value="" disabled selected>Please Choose</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+													</select>
+												</section>
+											</div>
+											<div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Children:</label>
+													<select id="children" name="children" class="cs-select cs-skin-border">
+														<option value="" disabled selected>Please Choose</option>
+														<option value="0">0</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+													</select>
+												</section>
+											</div>
+
+                                            <div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Preferred Type:</label>
+													<select name="category" style="width:180px;height:50px" multiple="multiple">
+														<option value="" disabled selected>Please Choose</option>
+                                                        <option style="color:black" value="None">None</option>
+                                                        <option style="color:black" value="Entertainment">Entertainment</option>
+														<option style="color:black" value="Food">Food</option>
+														<option style="color:black" value="Heritage">Heritage</option>
+														<option style="color:black" value="Museum">Museum</option>
+                                                        <option style="color:black" value="Nature">Nature</option>
+													</select>
+												</section>
+											</div>
+                                            <div class="col-xxs-12 col-xs-6 mt">
+												<section>
+													<label for="class">Favourite Attraction:</label>
+													<select name="favourite" size="1" style="width:180px;height:50px" multiple="multiple">
+														<option value="" disabled selected>Please Choose</option>
+                                                        <option style="color:black" value="None">None</option>
+                                                        {% for i in favourite_name %}
+                                                        <option style="color:black" value='{{i}}'>{{i}}</option>
+														{% endfor %}
+													</select>
+												</section>
+											</div>
+											<div class="col-xs-12">
+												<input type="submit" class="btn btn-primary btn-block" value="Search Itinerary"/>
+											</div>
+										</div>
+									 </div>
+									</div>
+                                    </form>
+
+								</div>
+							</div>
+							<div class="desc2 animate-box">
+								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
+									<h2>Welcome to Montreal</h2>
+									<h3>Get Your Optimal Itinerary!</h3>
+									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+        
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 text-center">
+							<p>Copyright &copy; 2021.MGSC662 Group11 All rights reserved.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	
+
+	</div>
+	<!-- END fh5co-page -->
+
+	</div>
+	<!-- END fh5co-wrapper -->
+
+	<!-- jQuery -->
+
+
+	<script src="../static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="../static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="../static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="../static/js/jquery.waypoints.min.js"></script>
+	<script src="../static/js/sticky.js"></script>
+
+	<!-- Stellar -->
+	<script src="../static/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="../static/js/hoverIntent.js"></script>
+	<script src="../static/js/superfish.js"></script>
+	<!-- Magnific Popup -->
+	<script src="../static/js/jquery.magnific-popup.min.js"></script>
+	<script src="../static/js/magnific-popup-options.js"></script>
+	<!-- Date Picker -->
+	<script src="../static/js/bootstrap-datepicker.min.js"></script>
+	<!-- CS Select -->
+	<script src="../static/js/classie.js"></script>
+	<script src="../static/js/selectFx.js"></script>
+	
+	<!-- Main JS -->
+	<script src="../static/js/main.js"></script>
+
+	</body>
+</html>
+<script type="text/javascript">
+    function b1(){
+        var b = Number($("#budget option:selected").val())
+        var d = Number($("#days option:selected").val())
+        var a = Number($("#adult option:selected").val())
+        var c = Number($("#children option:selected").val())
+        var r = Number($("#rooms option:selected").val())
+        if(b/r/d <= 60||b/d/(a+c) <= 30){
+            alert("Your budget is not enough!");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
+<script>
+  $(function() {
+    $('.multiple-select').multipleSelect()
+  })
+</script>
+
