@@ -1,0 +1,4 @@
+hotel_id,hotel,address,star_rating,google_rating,nightly_price
+0,Hotel Casa Bella,"264 Sherbrooke St W, Montreal, Quebec H2X 1X9",2,3,59
+1,Hotel Monville,"1041 Rue de Bleury, Montreal, QC H2Z 1M7",4,4.5,167
+2,"The Ritz-Carlton, Montreal","1228 Sherbrooke St W, Montreal, Quebec H3G 1H6",5,4.6,501
