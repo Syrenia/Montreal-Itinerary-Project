@@ -1,5 +1,5 @@
 # Montreal-Itinerary-Project
-Find and visualize one-day and three-day optimal itineraries for tourists visiting Montreal, using gurobi, flask, etc.
+Find and visualize one-day and three-day optimal itineraries for tourists visiting Montreal, using gurobi, flask, etc. 30 attractions and 3 hotels are taken into account when solving the problem. The choice of hotel is based on tourist's budget.
 
 Hello, this is part of a course project, which aims to find the optimal itineraries for up to 5 tourists visting Montreal. I scrapped cost of Uberx and Uberxl, built the gurobi models and a website to visualize the solutions, so here are the codes.
 1. uber_cost.py is the file used to scrap the costs, it was supposed to collect the costs automatically, but Uber will prevent searching after about 30-40 times fof search, so one needs to keep an eye on it.
